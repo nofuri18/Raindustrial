@@ -1,0 +1,34 @@
+{% extends 'theme/layout.html' %}
+
+{% block isi %}
+    <div class="page-header">
+        <h1 class="page-title">Dashboard</h1>
+        <div>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item text-gray">Admin</li>
+                <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+            </ol>
+        </div>
+    </div>
+    <!-- PAGE-HEADER END -->
+
+    <!-- ROW 1 OPEN -->
+    <div class="row">
+        {% for key in ['jenis', 'satuan', 'merk', 'barang', 'bm', 'bk', 'customer', 'user'] %}
+            <div class="col-sm-6 col-md-6 col-lg-6 col-xl-3">
+                <div class="card bg-{{ key }} img-card box-{{ key }}-shadow">
+                    <div class="card-body">
+                        <div class="d-flex">
+                            <div class="text-white">
+                                <h2 class="mb-0 number-font">{# $$key #} 4</h2>
+                                <p class="text-white mb-0">{# ucfirst($key) #} Barang</p>
+                            </div>
+                            <div class="ms-auto"> <i class="fe fe-package text-white fs-40 me-2 mt-2"></i> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <!-- ROW 1 CLOSED -->
+{% endblock %}
